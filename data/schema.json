@@ -445,8 +445,8 @@
               "name": "title",
               "description": null,
               "type": {
-                "kind": "ENUM",
-                "name": "SortDirection",
+                "kind": "INPUT_OBJECT",
+                "name": "test",
                 "ofType": null
               },
               "defaultValue": null
@@ -455,8 +455,8 @@
               "name": "subject",
               "description": null,
               "type": {
-                "kind": "ENUM",
-                "name": "SortDirection",
+                "kind": "INPUT_OBJECT",
+                "name": "test",
                 "ofType": null
               },
               "defaultValue": null
@@ -467,26 +467,34 @@
           "possibleTypes": null
         },
         {
-          "kind": "ENUM",
-          "name": "SortDirection",
-          "description": "The direction in which to sort the edges in a connection.",
+          "kind": "INPUT_OBJECT",
+          "name": "test",
+          "description": null,
           "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": [
+          "inputFields": [
             {
-              "name": "ASC",
+              "name": "__e",
               "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
             },
             {
-              "name": "DESC",
+              "name": "__ne",
               "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "defaultValue": null
             }
           ],
+          "interfaces": null,
+          "enumValues": null,
           "possibleTypes": null
         },
         {

@@ -89,7 +89,13 @@ const ticketType = new GraphQLObjectType({
 
 const { connectionType: ticketConnection, edgeType : graphQLTicketEdge, } = connectionDefinitions({ name: 'Ticket', nodeType: ticketType });
 
-
+const test = new GraphQLInputObjectType({
+  name: 'test',
+  fields: {
+    __e: { type: GraphQLString},
+    __ne: { type: GraphQLString},
+  }
+})
 const storeType = new GraphQLObjectType({
   name: 'Store',
   fields: () => ({
@@ -109,8 +115,8 @@ const storeType = new GraphQLObjectType({
           type: new GraphQLInputObjectType({
             name: 'Sort',
             fields: {
-              title: { type: SortType },
-              subject: { type: SortType }
+              title: { type: test },
+              subject: { type: test }
             }
           })
         },
