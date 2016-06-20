@@ -345,11 +345,11 @@
               "description": null,
               "args": [
                 {
-                  "name": "sort",
+                  "name": "filter",
                   "description": null,
                   "type": {
                     "kind": "INPUT_OBJECT",
-                    "name": "Sort",
+                    "name": "Filter",
                     "ofType": null
                   },
                   "defaultValue": null
@@ -437,7 +437,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "Sort",
+          "name": "Filter",
           "description": null,
           "fields": null,
           "inputFields": [
@@ -446,7 +446,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "test",
+                "name": "FilterObject",
                 "ofType": null
               },
               "defaultValue": null
@@ -456,7 +456,7 @@
               "description": null,
               "type": {
                 "kind": "INPUT_OBJECT",
-                "name": "test",
+                "name": "FilterObject",
                 "ofType": null
               },
               "defaultValue": null
@@ -468,7 +468,7 @@
         },
         {
           "kind": "INPUT_OBJECT",
-          "name": "test",
+          "name": "FilterObject",
           "description": null,
           "fields": null,
           "inputFields": [

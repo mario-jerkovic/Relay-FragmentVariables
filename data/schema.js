@@ -58,19 +58,6 @@ const {nodeInterface, nodeField} = nodeDefinitions(
   }
 );
 
-const SortType = new GraphQLEnumType({
-  name: 'SortDirection',
-  description: 'The direction in which to sort the edges in a connection.',
-  values: {
-    ASC: {
-      value: 'asc'
-    },
-    DESC: {
-      value: 'desc'
-    }
-  }
-});
-
 const ticketType = new GraphQLObjectType({
   name: 'Ticket',
   fields: () => ({
@@ -89,13 +76,14 @@ const ticketType = new GraphQLObjectType({
 
 const { connectionType: ticketConnection, edgeType : graphQLTicketEdge, } = connectionDefinitions({ name: 'Ticket', nodeType: ticketType });
 
-const test = new GraphQLInputObjectType({
-  name: 'test',
+const FilterObject = new GraphQLInputObjectType({
+  name: 'FilterObject',
   fields: {
-    __e: { type: GraphQLString},
-    __ne: { type: GraphQLString},
+    __e: { type: GraphQLString },
+    __ne: { type: GraphQLString }
   }
-})
+});
+
 const storeType = new GraphQLObjectType({
   name: 'Store',
   fields: () => ({
@@ -111,12 +99,12 @@ const storeType = new GraphQLObjectType({
     ticketConnection: {
       type: ticketConnection,
       args: {
-        sort: {
+        filter: {
           type: new GraphQLInputObjectType({
-            name: 'Sort',
+            name: 'Filter',
             fields: {
-              title: { type: test },
-              subject: { type: test }
+              title: { type: FilterObject },
+              subject: { type: FilterObject }
             }
           })
         },

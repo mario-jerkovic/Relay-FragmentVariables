@@ -1,10 +1,10 @@
 import Relay from 'react-relay';
 import React from 'react';
-import { Route } from 'react-router';
 
-import App from '../components/App';
-
-/*export default class extends Relay.Route {
+// Working code
+// Uncomment
+/*
+export default class extends Relay.Route {
   static queries = {
     viewer: () => Relay.QL`
       query {
@@ -14,12 +14,16 @@ import App from '../components/App';
   };
 
   static routeName = 'AppHomeRoute';
-}*/
+}
+*/
 
+// Not working code
+import { Route } from 'react-router';
+import App from '../components/App';
+ 
 const viewerQuery = { viewer: () => Relay.QL`query { viewer }`};
 
-export default (
-  <Route path='/' component={App} queries={viewerQuery}/>
-)
+export default (<Route path='/' component={App} queries={viewerQuery}/>)
+
 
 
