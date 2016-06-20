@@ -18,6 +18,7 @@ export default class extends Relay.Route {
 */
 
 // Not working code
+// Comment out this
 import { Route } from 'react-router';
 import App from '../components/App';
  

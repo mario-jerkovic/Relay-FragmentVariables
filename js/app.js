@@ -18,6 +18,7 @@ ReactDOM.render(
 */
 
 // Not working code
+// Comment out this
 import { browserHistory, applyRouterMiddleware, Router } from 'react-router';
 import useRelay from 'react-router-relay';
 

@@ -46,13 +46,7 @@ module.exports = {
   getViewer: () => viewer,
   getStore: (id) => stores.find(w => w.id === id),
   getStores: () => stores,
-  getConnectedTickets: (array) => {
-    return array.map(id => {
-      //console.log(id);
-      return tickets.find(w => parseInt(w.id) === id);
-      //return null
-    });
-  },
+  getConnectedTickets: (array) => (array.map(id => (tickets.find(w => parseInt(w.id) === id)))),
   getTicket: (id) => tickets.find(w => w.id === id),
   getTickets: () => tickets,
   Root,
