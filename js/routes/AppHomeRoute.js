@@ -22,9 +22,14 @@ export default class extends Relay.Route {
 import { Route } from 'react-router';
 import App from '../components/App';
  
-const viewerQuery = { viewer: () => Relay.QL`query { viewer }`};
+const viewerQuery = {
+	viewer: (Component, variables) => Relay.QL`query { 
+		viewer {
+			${Component.getFragment('viewer', { ...variables })}
+		}
+	}`};
 
-export default (<Route path='/' component={App} queries={viewerQuery}/>)
+export default (<Route path='/' component={App} queries={viewerQuery} render={({ props }) => props ? <App {...props} /> : <div>Loading...</div>}/>)
 
 
 

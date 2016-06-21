@@ -23,12 +23,12 @@ export default Relay.createContainer(StoreForm, {
     id: "c3RvcmU6MQ=="
   },
   fragments: {
-    viewer: () => Relay.QL`
+    viewer: (variables) => Relay.QL`
       fragment on Viewer {
         store(id: $id) {
           id,
           name,
-          ${StoreListTickets.getFragment('store')}
+          ${StoreListTickets.getFragment('store', { ...variables })}
         }
       }
     `
@@ -76,7 +76,7 @@ const StoreListTickets = Relay.createContainer(TicketList, {
     filter: null
   },
   fragments: {
-    store: () => Relay.QL`
+    store: (variables) => Relay.QL`
       fragment on Store {
         ticketConnection(first: $first, last: $last, before: $before, after: $after, filter: $filter ) {
           edges{
