@@ -29,7 +29,7 @@ const viewerQuery = {
 		}
 	}`};
 
-export default (<Route path='/' component={App} queries={viewerQuery} render={({ props }) => props ? <App {...props} /> : <div>Loading...</div>}/>)
+export default (<Route path='/' component={App} queries={viewerQuery} />)
 
 
 

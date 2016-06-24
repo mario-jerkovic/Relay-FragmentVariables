@@ -28,7 +28,7 @@ export default Relay.createContainer(StoreForm, {
         store(id: $id) {
           id,
           name,
-          ${StoreListTickets.getFragment('store', { ...variables })}
+          ${StoreListTickets.getFragment('store')}
         }
       }
     `
